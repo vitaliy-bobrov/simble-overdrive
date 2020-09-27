@@ -6,11 +6,11 @@ The repository contains KiCad source files: schematic, PCB, BOM.
 
 ## Schematic
 
-![](https://github.com/vitaliy-bobrov/simble-overdrive/blob/main/images/schematic.png)
+![](https://github.com/vitaliy-bobrov/simble-overdrive/blob/master/images/schematic.png)
 
 ## PCB (3D preview)
 
-![](https://github.com/vitaliy-bobrov/simble-overdrive/blob/main/images/simble-overdrive.jpg)
+![](https://github.com/vitaliy-bobrov/simble-overdrive/blob/master/images/simble-overdrive.jpg)
 
 ## Interactive BOM
 
