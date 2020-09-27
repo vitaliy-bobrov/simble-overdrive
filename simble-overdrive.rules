@@ -1,0 +1,79 @@
+
+(rules PCB simba-overdrive
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias off)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 571)
+    (layer_rule Front
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.4)
+    )
+    (layer_rule Back
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 127.0)
+    (clear 127.2)
+    (clear 63.5 (type smd_to_turn_gap))
+    (clear 31.8 (type smd_smd))
+  )
+  (padstack "Via[0-1]_600:300_um"
+    (shape
+      (circle Front 600.0 0.0 0.0)
+    )
+    (shape
+      (circle Back 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:300_um" "Via[0-1]_600:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:300_um-kicad_default" "Via[0-1]_600:300_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:300_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 127.0)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+  (class "kicad_default"
+    GND "Net-(ACCENT1-Pad2)" "Net-(ACCENT1-Pad1)" VCC "Net-(C2-Pad1)" "Net-(C3-Pad1)" "Net-(C4-Pad1)" VREF
+    "Net-(C6-Pad2)" "Net-(C6-Pad1)" "Net-(C7-Pad1)" "Net-(C8-Pad2)" "Net-(C8-Pad1)" "Net-(C9-Pad2)" "Net-(C10-Pad2)" "Net-(C10-Pad1)"
+    "Net-(CONTOUR1-Pad3)" "Net-(CONTOUR1-Pad1)" "Net-(D1-Pad2)" "Net-(D1-Pad1)" "Net-(D5-Pad2)" "Net-(D5-Pad1)" "Net-(D6-Pad2)" "Net-(H1-Pad1)"
+    "Net-(H4-Pad1)" "Net-(H5-Pad1)" "Net-(R8-Pad2)" "Net-(SENSIVITY1-Pad3)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 127.0)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+)
